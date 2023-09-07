@@ -1,5 +1,3 @@
-import React from "react";
-
 const readFile = (file: Blob): FileReader | null => {
   const reader = new FileReader();
 

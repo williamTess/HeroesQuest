@@ -1,3 +1,5 @@
+import { regex } from "../type/regex";
+
 export const isNumeric = (value: string) => {
-  return /^\d+$/.test(value);
+  return regex.isNumber.test(value);
 };

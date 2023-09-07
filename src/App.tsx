@@ -4,10 +4,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import readFile from "./utils/readFile";
 import { createMap } from "./utils/createMap";
-import RenderMap from "./utils/RenderMap";
+import RenderMap from "./components/RenderMap";
 import { Hero } from "./type/type";
 import { onMove } from "./utils/onMove";
-import { RenderResults } from "./utils/RenderResults";
+import { RenderResults } from "./components/RenderResults";
 
 const App = () => {
   const [content, setContent] = useState<string[]>([]);

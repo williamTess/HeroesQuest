@@ -1,7 +1,7 @@
 import { MOOVE, ORIENTATION } from "../type/enum";
 import { Hero } from "../type/type";
 
-const getPrevCase = (current: string, hero: Hero) => {
+export const getPrevCase = (current: string, hero: Hero) => {
   let tmpHero = { ...hero };
   tmpHero.prevCase = current;
   if (current.includes("T")) {
@@ -18,7 +18,10 @@ const getPrevCase = (current: string, hero: Hero) => {
   return tmpHero;
 };
 
-const changeOrientation = (move: MOOVE, currentOrientation: ORIENTATION) => {
+export const changeOrientation = (
+  move: MOOVE,
+  currentOrientation: ORIENTATION
+) => {
   let orientation = currentOrientation;
   if (move === MOOVE.GAUCHE) {
     if (currentOrientation === ORIENTATION.NORD)
@@ -41,7 +44,7 @@ const changeOrientation = (move: MOOVE, currentOrientation: ORIENTATION) => {
   return orientation;
 };
 
-const moveHero = (
+export const moveHero = (
   hero: Hero,
   currentMap: string[][]
 ): { map: string[][]; newHeroStat: Hero } => {

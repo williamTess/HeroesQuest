@@ -4,7 +4,7 @@ import { Hero, Pos } from "../type/type";
 import { isEnum } from "./isEnum";
 import { isNumeric } from "./isNumeric";
 
-const checkLine = (line: string[]) => {
+export const checkLine = (line: string[]) => {
   console.log(line);
   if (line[0].localeCompare("C") === 0) {
     if (line.length !== 3) return "error map lenght";

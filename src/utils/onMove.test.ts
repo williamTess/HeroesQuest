@@ -145,4 +145,69 @@ test("On move()", () => {
       treasure: 2,
     },
   });
+
+  expect(
+    moveHero(
+      { ...heroMock, orientation: ORIENTATION.SUD, position: { x: 3, y: 0 } },
+      mapMock
+    )
+  ).toStrictEqual({
+    map: [
+      ["laura", "0", "laura"],
+      ["0", "0", "0"],
+      ["0", "0", "laura"],
+      ["0", "0", "0"],
+    ],
+    newHeroStat: {
+      moves: ["A"],
+      name: "laura",
+      orientation: "S",
+      position: { x: 3, y: 0 },
+      prevCase: "0",
+      treasure: 2,
+    },
+  });
+
+  expect(
+    moveHero(
+      { ...heroMock, orientation: ORIENTATION.EST, position: { x: 1, y: 0 } },
+      mapMock
+    )
+  ).toStrictEqual({
+    map: [
+      ["laura", "0", "laura"],
+      ["0", "laura", "0"],
+      ["0", "0", "laura"],
+      ["0", "0", "0"],
+    ],
+    newHeroStat: {
+      moves: ["A"],
+      name: "laura",
+      orientation: "E",
+      position: { x: 1, y: 1 },
+      prevCase: "0",
+      treasure: 2,
+    },
+  });
+  expect(
+    moveHero(
+      { ...heroMock, orientation: ORIENTATION.OUEST, position: { x: 1, y: 0 } },
+      mapMock
+    )
+  ).toStrictEqual({
+    map: [
+      ["laura", "0", "laura"],
+      ["0", "laura", "0"],
+      ["0", "0", "laura"],
+      ["0", "0", "0"],
+    ],
+    newHeroStat: {
+      moves: ["A"],
+      name: "laura",
+      orientation: "O",
+      position: { x: 1, y: 0 },
+      prevCase: "0",
+      treasure: 2,
+    },
+  });
 });
